@@ -81,6 +81,18 @@ const update = (body) => {
     })
 }
 
+const updateProduct = (body) => {
+    return new Promise(function (resolve, reject) {
+        const {id, productname, price, quantity} = body
+        pool.query('UPDATE products SET productname=$1, price=$2, quantity=$3 WHERE id=$4', [productname, price, quantity, id], (error, results) => {
+            if (error) {
+                reject(error)
+            }
+            resolve("ok")
+        })
+    })
+}
+
 const deleteUser = (body) => {
     return new Promise(function (resolve, reject) {
         const {id} = body
@@ -93,10 +105,25 @@ const deleteUser = (body) => {
     })
 }
 
+const deleteProduct = (body) => {
+    return new Promise(function (resolve, reject) {
+        const {id} = body
+        pool.query('DELETE FROM products WHERE id = $1', [id], (error, results) => {
+            if (error) {
+                reject(error)
+            }
+            resolve("ok")
+        })
+    })
+}
+
 module.exports = {
     getAllUsers,
+    getAllProducts,
+    updateProduct,
     login,
     registration,
     deleteUser,
+    deleteProduct,
     update
 }

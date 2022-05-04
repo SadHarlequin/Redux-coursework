@@ -7,14 +7,14 @@ export default function ProductItem(props) {
     let [quantity_, setQuantity] = useState()
     const {id, productname, price, quantity} = props
 
-    function update() {
+    function updateProduct() {
         if (!productname_)
             productname_ = productname
         if (!price_)
             price_ = price
         if (!quantity_)
             quantity_ = quantity
-        props.update_({
+        props.updateProduct_({
             id: id,
             productname: productname_,
             price: price_,
@@ -22,8 +22,8 @@ export default function ProductItem(props) {
         })
     }
 
-    function deleteUs() {
-        props.delete_({
+    function deleteProds() {
+        props.deleteProduct_({
             id: id
         })
     }
@@ -46,8 +46,8 @@ export default function ProductItem(props) {
                 <input type={'text'} className={classes.padding} defaultValue={quantity}
                        onChange={e => setQuantity(e.target.value)}/>
             </div>
-            <button onClick={update} className={classes.padding}>Edit</button>
-            <button onClick={deleteUs} className={classes.padding}>Delete</button>
+            <button onClick={updateProduct} className={classes.padding}>Edit</button>
+            <button onClick={deleteProds} className={classes.padding}>Delete</button>
         </li>
     )
 }

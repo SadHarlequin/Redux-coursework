@@ -21,7 +21,7 @@ export default function Login() {
 
     return (
         <div>
-            <h1>Please Log In</h1>
+            <h1>Please, Log In</h1>
             <form onSubmit={handleSubmit}>
                 <label>
                     <p>Username</p>

@@ -1,4 +1,4 @@
-import {USER_EDIT, USER_LOGIN, USER_LOGOUT} from "./types";
+import {USER_EDIT, USER_LOGIN, USER_LOGOUT, USER_SET} from "./types";
 
 export function userLogin(response) {
     return {
@@ -20,4 +20,3 @@ export function userEdit(newUser) {
         value: newUser
     }
 }
-

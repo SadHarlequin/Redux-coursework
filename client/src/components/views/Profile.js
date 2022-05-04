@@ -37,10 +37,7 @@ export default function Profile() {
                     <p>Password</p>
                     <input type="password" defaultValue={user.password} onChange={e => setPassword(e.target.value)}/>
                 </label>
-                <label>
-                    <p>Is admin?</p>
-                    <input type="checkbox" defaultChecked={user.role === 'ROLE_ADMIN'} onChange={e => setIsAdmin(e.target.value)}/>
-                </label>
+                
                 <div>
                     <button type="submit">Submit</button>
                 </div>

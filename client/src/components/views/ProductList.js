@@ -7,19 +7,19 @@ import {useSelector} from "react-redux";
 import {Navigate} from "react-router-dom";
 import React from "react";
 
-export default function Admin() {
+export default function ProductList() {
     const [items, setItems] = useState()
     const user = useSelector(state => state.user)
     useEffect(() => {
-        getAllUsers()
-      //  getAllProducts()
+       
+       getAllProducts()
     }, [])
 
     if (!user || (user.username!=='admin'))
         return <Navigate to={'/'}/>
 
-    function getAllUsers() {
-        return fetch('http://localhost:3001/getAllUsers', {
+    function getAllProducts() {
+        return fetch('http://localhost:3001/getAllProducts', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -28,9 +28,9 @@ export default function Admin() {
             .then(data => {
                 data.json().then(r => {
                     let temp = []
-                    for (const user of r) {
-                        temp.push(<UserItem id={user.id} username={user.username} password={user.password}
-                                             update_={editUser} delete_={deleteUser}/>)
+                    for (const product of r) {
+                        temp.push(<ProductItem id={product.id} productname={product.productname} price={product.price}
+                                             quantity={product.quantity} updateProduct_={editProduct} deleteProduct_={deleteProduct}/>)
                     }
                     setItems(temp)
                 })

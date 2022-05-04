@@ -2,7 +2,8 @@ import {Route, Routes} from "react-router-dom";
 import Home from "../components/views/Home";
 import Login from "../components/views/Login";
 import Profile from "../components/views/Profile";
-import Admin from "../components/views/Admin";
+import Users from "../components/views/Admin";
+import ProductList from "../components/views/ProductList";
 import Registration from "../components/views/Registration";
 
 export default function Router() {
@@ -11,7 +12,8 @@ export default function Router() {
             <Route path="/" element={<Home/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/profile" element={<Profile/>}/>
-            <Route path="/admin" element={<Admin/>}/>
+            <Route path="/users" element={<Users/>}/>
+            <Route path="/productList" element={<ProductList/>}/>
             <Route path="/registration" element={<Registration/>}/>
         </Routes>
     )

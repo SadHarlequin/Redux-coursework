@@ -20,8 +20,11 @@ export default function Header() {
                     to={'/profile'}
                 >Profile</Link>
                 <Link
-                    to={'/admin'}
-                >Admin</Link>
+                    to={'/users'}
+                >Users</Link>
+                <Link
+                    to={'/productlist'}
+                >ProductList</Link>
                 <Link
                     to={'/registration'}
                 >Registration</Link>
