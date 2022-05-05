@@ -32,5 +32,20 @@ export function deleteProduct(product) {
     )
 }
 
+export async function getAllProducts() {
+    const data = await fetch('http://localhost:3001/getAllProducts', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+        .then(data => { 
+            return data 
+        })  
+ //   console.log(data)
+    return data.json()
 
+ //   console.log(finData)
+    
+}
 

@@ -14,7 +14,7 @@ export default function Admin() {
         getAllUsers()
       //  getAllProducts()
     }, [])
-
+    
     if (!user || (user.username!=='admin'))
         return <Navigate to={'/'}/>
 
